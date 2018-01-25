@@ -19,6 +19,7 @@ A function that creates an object class and allowes you to create multiple insta
 
 Ex: Constructor function to create a lot of user objects
 
+```javascript
 function User(firstName, lastName, age, gender){
     this.firstName = firstNameame;
     this.lastName - lastName;
@@ -28,6 +29,7 @@ function User(firstName, lastName, age, gender){
 
 var user1 = new User('John', 'Smith', '26', 'male');
 var user200 = new User ('Jill', 'Robinson', '25', 'male');
+```
 
 user200 will return an object with the paramiters typed 
 
@@ -36,37 +38,34 @@ Simply an object that multiple objects can refer to to get any information or fu
 
 Ex: We can add properties to the the prototype that all of the users instanaces like user1 and user200 will have access to and be able to use.
 
+``` javascript
 User.prototype.emailDomain = '@facebook.com';  //create the prototype
+```
 
 This will show under the _proto__: Object section show that the object has access to this newly created prototype
 
 user200.emailDomain will show it by itself
 
 To set it, create a method:
+```javascript
 User.protoype.getEmailAddress = function (){
     return this.firstName + this.lastName + this.emailDomain;
     }
 
-Invoke by:
+//Invoke by:
 user200.getEmailAddress();
 
-Returns "JillRobinson@facebook.com"
+///Returns "JillRobinson@facebook.com"
+```
 
 # Binary Search Trees
 BSTs are non-linear data structure. Trees are mainly used to represent data containing hierarchical relationship between elements comprised of nodes. Every node or vertex called a "root" that has either no child node (min), or one child node or two child nodes (max). Child node in a binary tree on the left is termed as ‘left child node’ and node in the right is termed as the ‘right child node’. 
 
 Values in a tree are placed so that smaller values are to the left of the parent and larger are to the right.
 
-Example: full balanced tree               Example 2: thinking of it as a tree of trees
-                20 (root)                                BST (root)
-               /  \                                     /  \
-             15    25                                BST    BST
-            / \    / \                              /  \    /  \
-          10  13  22  26                          BST  BST BST  BST
-
 BST's are recursive by nature.
 
-###Types of Binary Trees:
+### Types of Binary Trees:
 * **full binary tree:** called as proper binary tree or 2-tree is a tree in which all the node other than the leaves has exact two children.
 
 * **complete binary tree:** every level, except possibly the last, has to be completely filled and all nodes are as far left as possible.
@@ -77,3 +76,4 @@ BST's are recursive by nature.
 
 
 # Hash Table/Object/Dictionary
+__good stuff coming soon__

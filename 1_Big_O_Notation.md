@@ -80,14 +80,15 @@ function binarySearch(array, key){
 
 **Worse runtime possible!** 
 
-Example: traveling sales person who wants to travel to n cities  while traveling the minimum possible distance. There are 120 possible permutations for a list of 5 cities (5 * 4 * 3 * 2 * 1 = 120). 6 cities = 720, 7 cities = 5040 and so on.
+Example: traveling sales person who wants to travel to n cities while traveling the minimum possible distance. There are 120 possible permutations for a list of 5 cities (5 * 4 * 3 * 2 * 1 = 120). 6 cities = 720, 7 cities = 5040 and so on.
 
 ```javascript
 function factorial(num, sum=1){
-   while(num > 0){
-    sum = num * sum;
-    return factorial(num-1, sum);
+   if(num <= 2){
+     return num;
    }
-  return sum;
+   else{
+     return num * factorial(num-1);
+   }
 }
 ```
