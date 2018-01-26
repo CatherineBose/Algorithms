@@ -86,12 +86,12 @@ Example:
 The term "Hash" is used because keys are large keys are converted into small keys by using hash functions. Hash functions turn key data (such as strings) into converted key which are numbers that have an index value. When we want to retrive that key:value pair in the future, we can jump directly to its position.
 
 Example: 
-
-__String__                __Hash function__                 __Index__ 
-abcdef       (971 + 982 + 993 + 1004 + 1015 + 1026)%2069       38
-bcdefa       (981 + 992 + 1003 + 1014 + 1025 + 976)%2069       23
-cdefab       (991 + 1002 + 1013 + 1024 + 975 + 986)%2069       14
-defabc       (1001 + 1012 + 1023 + 974 + 985 + 996)%2069       11
+| String        | Hash function                               | Index   |
+| ------------- |:-------------:                              | -----:  |
+| abcdef        | (971 + 982 + 993 + 1004 + 1015 + 1026)%2069 |   38    |
+| bcdefa        | (981 + 992 + 1003 + 1014 + 1025 + 976)%2069 |   23    |
+| cdefab        | (991 + 1002 + 1013 + 1024 + 975 + 986)%2069 |   14    |
+| defabc        | (1001 + 1012 + 1023 + 974 + 985 + 996)%2069 |   11    |
 
 If we want to see if our hash table contains "cdefab", it is put into the hash function which returns 14. We go to array[14] and see if it is a match. 
 
@@ -102,5 +102,11 @@ Example:
 __String__                __Hash function__                 __Index__  __Next__
 abcdef       (971 + 982 + 993 + 1004 + 1015 + 1026)%2069       38         68
 empty                           empty                          68         98
+
+| String        | Hash function                               | Index   | Next |
+| ------------- |:-------------:                              | -----:  |-----:|
+| abcdef        | (971 + 982 + 993 + 1004 + 1015 + 1026)%2069 |   38    |   68 |
+| empty         | empty                                       |   68    |   98 |
+
 
 *Well designed hash tables have hash functions that reduce the chances that keys will hash to the same value.
