@@ -86,22 +86,19 @@ Example:
 The term "Hash" is used because keys are large keys are converted into small keys by using hash functions. Hash functions turn key data (such as strings) into converted key which are numbers that have an index value. When we want to retrive that key:value pair in the future, we can jump directly to its position.
 
 Example: 
-| String        | Hash function                               | Index   |
-| ------------- |:-------------:                              | -----:  |
-| abcdef        | (971 + 982 + 993 + 1004 + 1015 + 1026)%2069 |   38    |
-| bcdefa        | (981 + 992 + 1003 + 1014 + 1025 + 976)%2069 |   23    |
-| cdefab        | (991 + 1002 + 1013 + 1024 + 975 + 986)%2069 |   14    |
-| defabc        | (1001 + 1012 + 1023 + 974 + 985 + 996)%2069 |   11    |
+
+| String        | Hash function                               | Index  |
+| ------------- |:-------------:                              | -----: |
+| abcdef        | (971 + 982 + 993 + 1004 + 1015 + 1026)%2069 |   38   |
+| bcdefa        | (981 + 992 + 1003 + 1014 + 1025 + 976)%2069 |   23   |
+| cdefab        | (991 + 1002 + 1013 + 1024 + 975 + 986)%2069 |   14   |
+| defabc        | (1001 + 1012 + 1023 + 974 + 985 + 996)%2069 |   11   |
 
 If we want to see if our hash table contains "cdefab", it is put into the hash function which returns 14. We go to array[14] and see if it is a match. 
 
 In large hash tables, it is possible for more than 1 key to have the same hash value or a collision. This is solved by using a "next position" pointer. Inserting will move to the "next" position and try to insert. If full, it will move to the "next" again. Retriving will look at the first position, if !match, it will move to the "next" position and check until found or false. This can affect runtime but not much.
 
-Example: 
-
-__String__                __Hash function__                 __Index__  __Next__
-abcdef       (971 + 982 + 993 + 1004 + 1015 + 1026)%2069       38         68
-empty                           empty                          68         98
+Example:                           empty                          68         98
 
 | String        | Hash function                               | Index   | Next |
 | ------------- |:-------------:                              | -----:  |-----:|
